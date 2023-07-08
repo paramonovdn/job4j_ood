@@ -43,7 +43,7 @@ public class Cinema3DTest {
         Cinema cinema = new Cinema3D();
         Session session = new Session3D();
         cinema.add(session);
-        Calendar date = new GregorianCalendar(2023, 7 , 8);
+        Calendar date = new GregorianCalendar(2023, 7, 8);
         List<Session> sessions = cinema.find(ses -> ses.toString().equals(date));
         assertThat(sessions).contains(session);
     }
