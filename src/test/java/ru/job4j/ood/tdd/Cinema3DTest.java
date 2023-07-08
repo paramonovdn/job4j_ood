@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.*;
 
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 
@@ -42,7 +43,7 @@ public class Cinema3DTest {
         Cinema cinema = new Cinema3D();
         Session session = new Session3D();
         cinema.add(session);
-        Calendar date = Calendar.getInstance();
+        Calendar date = new GregorianCalendar(2023, 7 , 8);
         List<Session> sessions = cinema.find(ses -> ses.toString().equals(date));
         assertThat(sessions).contains(session);
     }
