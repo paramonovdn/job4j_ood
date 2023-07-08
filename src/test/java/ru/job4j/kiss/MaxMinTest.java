@@ -45,6 +45,7 @@ public class MaxMinTest {
         assertThat(resultMax).isEqualTo(expectedMax);
         assertThat(resultMin).isEqualTo(expectedMin);
     }
+
     @Test
     public void test3() {
         Integer expectedMax = 5;
