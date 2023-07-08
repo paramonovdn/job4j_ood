@@ -4,7 +4,6 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.function.BiPredicate;
 
-
 public class MaxMin {
     public <T> T max(List<T> value, Comparator<T> comparator) {
         return findMaxMin(value, (x, y) -> comparator.compare(x, y) == 1);
