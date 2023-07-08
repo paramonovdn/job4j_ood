@@ -37,7 +37,6 @@ public class Cinema3DTest {
         assertThatThrownBy(() -> cinema.buy(account, -1, 1, date)).
                 isInstanceOf(IllegalArgumentException.class);
     }
-
     @Test
     public void ticketSearchByDate() {
         Cinema cinema = new Cinema3D();
