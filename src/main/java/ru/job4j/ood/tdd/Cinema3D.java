@@ -2,6 +2,7 @@ package ru.job4j.ood.tdd;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -20,7 +21,10 @@ public class Cinema3D implements Cinema {
 
     @Override
     public Ticket buy(Account account, int row, int column, Calendar date) {
-        if (row > 0 && column > 0 && date.after(Calendar.getInstance())) {
+        System.out.println("date2 = " + Calendar.getInstance());
+        Calendar pastDate = Calendar.getInstance();
+        pastDate.roll(Calendar.MINUTE, false);
+        if (row > 0 && column > 0 && date.after(pastDate)) {
             return  new Ticket3D();
         } else {
             throw new IllegalArgumentException();

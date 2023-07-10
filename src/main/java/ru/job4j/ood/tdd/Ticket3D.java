@@ -2,6 +2,7 @@ package ru.job4j.ood.tdd;
 
 import java.util.Objects;
 
+
 public class Ticket3D implements Ticket {
 
     int row;
