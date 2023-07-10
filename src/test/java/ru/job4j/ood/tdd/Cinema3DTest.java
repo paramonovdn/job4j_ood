@@ -1,6 +1,6 @@
 package ru.job4j.ood.tdd;
 
-import org.junit.jupiter.api.Disabled;
+
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.*;
@@ -38,13 +38,14 @@ public class Cinema3DTest {
         assertThatThrownBy(() -> cinema.buy(account, -1, 1, date)).
                 isInstanceOf(IllegalArgumentException.class);
     }
+
     @Test
-    public void ticketSearchByDate() {
+    public void whenBuyOnInvalidDateThenGetException() {
+        Account account = new AccountCinema();
         Cinema cinema = new Cinema3D();
-        Session session = new Session3D();
-        cinema.add(session);
-        Calendar date = new GregorianCalendar(2023, 7, 8);
-        List<Session> sessions = cinema.find(ses -> ses.toString().equals(date));
-        assertThat(sessions).contains(session);
+        Calendar date = new GregorianCalendar(2017, 0 , 25);;
+        assertThatThrownBy(() -> cinema.buy(account, 2, 9, date)).
+                isInstanceOf(IllegalArgumentException.class);
     }
+
 }
