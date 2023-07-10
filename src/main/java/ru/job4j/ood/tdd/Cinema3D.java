@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.function.Predicate;
 
 public class Cinema3D implements Cinema {
-
     List<Session> sessionList = new ArrayList<>();
     @Override
     public List<Session> find(Predicate<Session> filter) {
