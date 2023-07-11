@@ -18,8 +18,8 @@ public class GeneratorTest {
         String pattern = "I am a ${name}, Who are ${subject}? ";
         String expected = "I am a human, Who are you? ";
         Map<String, String> map = new HashMap<>();
-        map.put("name", "human" );
-        map.put("subject", "you" );
+        map.put("name", "human");
+        map.put("subject", "you");
         String result = generator.produce(pattern, map);
         assertThat(result).isEqualTo(expected);
     }
@@ -29,7 +29,7 @@ public class GeneratorTest {
         Generator generator = new Generator();
         String pattern = "I am a ${name}, Who are ${subject}? ";
         Map<String, String> map = new HashMap<>();
-        map.put("name", "human" );
+        map.put("name", "human");
         assertThatThrownBy(() -> generator.produce(pattern, map)).
                 isInstanceOf(IllegalArgumentException.class);
     }
@@ -39,8 +39,8 @@ public class GeneratorTest {
         Generator generator = new Generator();
         String pattern = "I am a ${name}, Who are ${subject}? ";
         Map<String, String> map = new HashMap<>();
-        map.put("name", "human" );
-        map.put("object", "you" );
+        map.put("name", "human");
+        map.put("object", "you");
         assertThatThrownBy(() -> generator.produce(pattern, map)).
                 isInstanceOf(IllegalArgumentException.class);
     }
@@ -50,9 +50,9 @@ public class GeneratorTest {
         Generator generator = new Generator();
         String pattern = "I am a ${name}, Who are ${subject}? ";
         Map<String, String> map = new HashMap<>();
-        map.put("name", "human" );
-        map.put("subject", "you" );
-        map.put("subject", "me" );
+        map.put("name", "human");
+        map.put("subject", "you");
+        map.put("subject", "me");
         assertThatThrownBy(() -> generator.produce(pattern, map)).
                 isInstanceOf(IllegalArgumentException.class);
     }
