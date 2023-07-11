@@ -7,7 +7,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class GeneratorTest {
-
     @Test
     public void simpleTest() {
         Generator generator = new PatternGenerator();
@@ -48,7 +47,7 @@ public class GeneratorTest {
         Map<String, String> map = new HashMap<>();
         map.put("name", "human");
         map.put("subject", "you");
-        map.put("subject", "me");
+        map.put("object", "me");
         assertThatThrownBy(() -> generator.produce(pattern, map)).
                 isInstanceOf(IllegalArgumentException.class);
     }
