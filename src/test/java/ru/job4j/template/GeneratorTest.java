@@ -11,12 +11,7 @@ public class GeneratorTest {
 
     @Test
     public void simpleTest() {
-        Generator generator = new Generator() {
-            @Override
-            public String produce(String template, Map<String, String> args) {
-                return null;
-            }
-        };
+        Generator generator = new Generator();
         String pattern = "I am a ${name}, Who are ${subject}? ";
         String expected = "I am a human, Who are you? ";
         Map<String, String> map = new HashMap<>();
@@ -28,12 +23,7 @@ public class GeneratorTest {
 
     @Test
     public void testWithWrongArgument() {
-        Generator generator = new Generator() {
-            @Override
-            public String produce(String template, Map<String, String> args) {
-                return null;
-            }
-        };
+        Generator generator = new Generator();
         String pattern = "I am a ${name}, Who are ${subject}? ";
         Map<String, String> map = new HashMap<>();
         map.put("name", "human");
@@ -43,12 +33,7 @@ public class GeneratorTest {
 
     @Test
     public void testWithWrongArgument2() {
-        Generator generator = new Generator() {
-            @Override
-            public String produce(String template, Map<String, String> args) {
-                return null;
-            }
-        };
+        Generator generator = new Generator();
         String pattern = "I am a ${name}, Who are ${subject}? ";
         Map<String, String> map = new HashMap<>();
         map.put("name", "human");
@@ -59,12 +44,7 @@ public class GeneratorTest {
 
     @Test
     public void testWithExtraArgument() {
-        Generator generator = new Generator() {
-            @Override
-            public String produce(String template, Map<String, String> args) {
-                return null;
-            }
-        };
+        Generator generator = new Generator();
         String pattern = "I am a ${name}, Who are ${subject}? ";
         Map<String, String> map = new HashMap<>();
         map.put("name", "human");
