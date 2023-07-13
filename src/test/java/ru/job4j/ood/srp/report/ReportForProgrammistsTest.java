@@ -5,9 +5,7 @@ import ru.job4j.ood.srp.formatter.DateTimeParser;
 import ru.job4j.ood.srp.formatter.ReportDateTimeParser;
 import ru.job4j.ood.srp.model.Employee;
 import ru.job4j.ood.srp.store.MemStore;
-
 import java.util.Calendar;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ReportForProgrammistsTest {
@@ -49,7 +47,6 @@ public class ReportForProgrammistsTest {
                 .append(parser.parse(worker4.getFired())).append(",")
                 .append(worker4.getSalary())
                 .append(System.lineSeparator());
-
         assertThat(engine.generate(em -> true)).isEqualTo(expect.toString());
     }
 
