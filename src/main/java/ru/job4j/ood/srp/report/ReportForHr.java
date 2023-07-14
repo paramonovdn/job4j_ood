@@ -27,7 +27,6 @@ public class ReportForHr implements Report {
                                 Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
 
         sortedMap.forEach((key, value) -> text.append(key.getName() + " " + value + System.lineSeparator()));
-
         return text.toString();
     }
 }

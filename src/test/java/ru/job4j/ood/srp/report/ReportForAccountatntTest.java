@@ -8,9 +8,7 @@ import ru.job4j.ood.srp.formatter.DateTimeParser;
 import ru.job4j.ood.srp.formatter.ReportDateTimeParser;
 import ru.job4j.ood.srp.model.Employee;
 import ru.job4j.ood.srp.store.MemStore;
-
 import java.util.Calendar;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ReportForAccountatntTest {
@@ -23,7 +21,7 @@ public class ReportForAccountatntTest {
         CurrencyConverter currencyConverter = new InMemoryCurrencyConverter();
         Employee worker1 = new Employee("Ivan", now, now, 100);
         store.add(worker1);
-        Report engine = new ReportForAccountatnt(store, parser, currencyConverter, Currency.RUB, Currency.USD );
+        Report engine = new ReportForAccountatnt(store, parser, currencyConverter, Currency.RUB, Currency.USD);
         StringBuilder expect = new StringBuilder()
                 .append("Name; Hired; Fired; Salary(RUB); Converted Salary(USD);")
                 .append(System.lineSeparator())
@@ -44,7 +42,7 @@ public class ReportForAccountatntTest {
         CurrencyConverter currencyConverter = new InMemoryCurrencyConverter();
         Employee worker1 = new Employee("Ivan", now, now, 100);
         store.add(worker1);
-        Report engine = new ReportForAccountatnt(store, parser, currencyConverter, Currency.RUB, Currency.EUR );
+        Report engine = new ReportForAccountatnt(store, parser, currencyConverter, Currency.RUB, Currency.EUR);
         StringBuilder expect = new StringBuilder()
                 .append("Name; Hired; Fired; Salary(RUB); Converted Salary(EUR);")
                 .append(System.lineSeparator())
@@ -65,7 +63,7 @@ public class ReportForAccountatntTest {
         CurrencyConverter currencyConverter = new InMemoryCurrencyConverter();
         Employee worker1 = new Employee("Ivan", now, now, 100);
         store.add(worker1);
-        Report engine = new ReportForAccountatnt(store, parser, currencyConverter, Currency.USD, Currency.RUB );
+        Report engine = new ReportForAccountatnt(store, parser, currencyConverter, Currency.USD, Currency.RUB);
         StringBuilder expect = new StringBuilder()
                 .append("Name; Hired; Fired; Salary(USD); Converted Salary(RUB);")
                 .append(System.lineSeparator())
@@ -85,7 +83,7 @@ public class ReportForAccountatntTest {
         CurrencyConverter currencyConverter = new InMemoryCurrencyConverter();
         Employee worker1 = new Employee("Ivan", now, now, 100);
         store.add(worker1);
-        Report engine = new ReportForAccountatnt(store, parser, currencyConverter, Currency.USD, Currency.EUR );
+        Report engine = new ReportForAccountatnt(store, parser, currencyConverter, Currency.USD, Currency.EUR);
         StringBuilder expect = new StringBuilder()
                 .append("Name; Hired; Fired; Salary(USD); Converted Salary(EUR);")
                 .append(System.lineSeparator())
@@ -106,7 +104,7 @@ public class ReportForAccountatntTest {
         CurrencyConverter currencyConverter = new InMemoryCurrencyConverter();
         Employee worker1 = new Employee("Ivan", now, now, 100);
         store.add(worker1);
-        Report engine = new ReportForAccountatnt(store, parser, currencyConverter, Currency.EUR, Currency.RUB );
+        Report engine = new ReportForAccountatnt(store, parser, currencyConverter, Currency.EUR, Currency.RUB);
         StringBuilder expect = new StringBuilder()
                 .append("Name; Hired; Fired; Salary(EUR); Converted Salary(RUB);")
                 .append(System.lineSeparator())
@@ -127,7 +125,7 @@ public class ReportForAccountatntTest {
         CurrencyConverter currencyConverter = new InMemoryCurrencyConverter();
         Employee worker1 = new Employee("Ivan", now, now, 100);
         store.add(worker1);
-        Report engine = new ReportForAccountatnt(store, parser, currencyConverter, Currency.EUR, Currency.USD );
+        Report engine = new ReportForAccountatnt(store, parser, currencyConverter, Currency.EUR, Currency.USD);
         StringBuilder expect = new StringBuilder()
                 .append("Name; Hired; Fired; Salary(EUR); Converted Salary(USD);")
                 .append(System.lineSeparator())
