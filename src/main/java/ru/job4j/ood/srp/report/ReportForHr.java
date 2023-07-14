@@ -30,7 +30,5 @@ public class ReportForHr implements Report {
         sortedMap.forEach((key, value) -> text.append(key.getName() + " " + value + System.lineSeparator()));
 
         return text.toString();
-
-
     }
 }

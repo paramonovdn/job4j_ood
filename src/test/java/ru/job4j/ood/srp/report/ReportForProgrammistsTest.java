@@ -49,5 +49,4 @@ public class ReportForProgrammistsTest {
                 .append(System.lineSeparator());
         assertThat(engine.generate(em -> true)).isEqualTo(expect.toString());
     }
-
 }
