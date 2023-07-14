@@ -7,8 +7,6 @@ import ru.job4j.ood.srp.currency.InMemoryCurrencyConverter;
 import ru.job4j.ood.srp.formatter.DateTimeParser;
 import ru.job4j.ood.srp.formatter.ReportDateTimeParser;
 import ru.job4j.ood.srp.model.Employee;
-import ru.job4j.ood.srp.report.Report;
-import ru.job4j.ood.srp.report.ReportForAccountatnt;
 import ru.job4j.ood.srp.store.MemStore;
 
 import java.util.Calendar;

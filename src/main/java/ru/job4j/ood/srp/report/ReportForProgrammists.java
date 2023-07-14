@@ -20,7 +20,6 @@ public class ReportForProgrammists implements Report {
         StringBuilder text = new StringBuilder();
         text.append("Name,Hired,Fired,Salary")
                 .append(System.lineSeparator());
-
         for (Employee employee : store.findBy(filter)) {
             text.append(employee.getName()).append(",")
                     .append(dateTimeParser.parse(employee.getHired())).append(",")

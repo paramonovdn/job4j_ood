@@ -20,7 +20,6 @@ public class ReportForHr implements Report {
         for (Employee employee : store.findBy(filter)) {
             employeeMap.put(employee, employee.getSalary());
         }
-
         Map<Employee, Double> sortedMap =
                 employeeMap.entrySet().stream()
                         .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))

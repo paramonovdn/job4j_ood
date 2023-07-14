@@ -9,7 +9,7 @@ import ru.job4j.ood.srp.store.Store;
 import java.util.Calendar;
 import java.util.function.Predicate;
 
-public class ReportForAccountatnt implements Report{
+public class ReportForAccountatnt implements Report {
 
 
     private final Store store;
@@ -22,7 +22,7 @@ public class ReportForAccountatnt implements Report{
 
 
     public ReportForAccountatnt(Store store, DateTimeParser<Calendar> dateTimeParser,
-                    CurrencyConverter currencyConverter , Currency source, Currency target) {
+                    CurrencyConverter currencyConverter, Currency source, Currency target) {
         this.store = store;
         this.dateTimeParser = dateTimeParser;
         this.currencyConverter = currencyConverter;
