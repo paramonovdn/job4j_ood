@@ -5,7 +5,12 @@ import java.util.List;
 
 public abstract class AbstractStore implements Store {
 
+    ControlQuality controlQuality;
     List<Food> foodList = new ArrayList<>();
+
+    public AbstractStore(ControlQuality controlQuality) {
+        this.controlQuality = controlQuality;
+    }
 
     @Override
     public void put(Food food) {
@@ -16,4 +21,5 @@ public abstract class AbstractStore implements Store {
     public List<Food> findAll() {
         return foodList;
     }
+
 }

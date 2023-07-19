@@ -2,19 +2,33 @@ package ru.job4j.ood.lsp;
 
 import org.junit.jupiter.api.Test;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class StoreTest {
+    ControlQuality controlQuality;
+    Warehous warehous;
+    Shop shop;
+    Trash trash;
+
+    public void init() {
+        List<Store> stores = new ArrayList<>();
+        controlQuality = new ControlQuality(stores);
+        warehous = new Warehous(controlQuality);
+        shop = new Shop(controlQuality);
+        trash = new Trash(controlQuality);
+        stores.add(warehous);
+        stores.add(shop);
+        stores.add(trash);
+    }
 
     @Test
     public void warehousTest() {
+        init();
+
         Food apple = new Fruit("Golden apple", LocalDateTime.of(2023, 11, 20, 10, 0, 0), LocalDateTime.of(2023, 7, 19, 10, 0, 0), 100.00f, 20.00f);
-
-        Warehous warehous = new Warehous();
-        Shop shop = new Shop();
-        Trash trash = new Trash();
-
-        ControlQuality controlQuality = new ControlQuality(warehous, shop, trash);
         controlQuality.control(apple);
 
         String warehousResult = warehous.findAll().toString();
@@ -31,13 +45,9 @@ public class StoreTest {
 
     @Test
     public void shopTest() {
+        init();
+
         Food apple = new Fruit("Golden apple", LocalDateTime.of(2023, 7, 20, 10, 0, 0), LocalDateTime.of(2023, 6, 18, 10, 0, 0), 100.00f,  20.00f);
-
-        Warehous warehous = new Warehous();
-        Shop shop = new Shop();
-        Trash trash = new Trash();
-
-        ControlQuality controlQuality = new ControlQuality(warehous, shop, trash);
         controlQuality.control(apple);
 
         String warehousResult = warehous.findAll().toString();
@@ -54,13 +64,9 @@ public class StoreTest {
 
     @Test
     public void trashTest() {
+        init();
+
         Food apple = new Fruit("Golden apple", LocalDateTime.of(2023, 7, 18, 10, 0, 0), LocalDateTime.of(2023, 5, 19, 10, 0, 0), 100.00f, 20.00f);
-
-        Warehous warehous = new Warehous();
-        Shop shop = new Shop();
-        Trash trash = new Trash();
-
-        ControlQuality controlQuality = new ControlQuality(warehous, shop, trash);
         controlQuality.control(apple);
 
         String warehousResult = warehous.findAll().toString();
