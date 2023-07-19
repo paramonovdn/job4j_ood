@@ -8,7 +8,7 @@ public class StoreTest {
 
     @Test
     public void warehousTest() {
-        Food apple = new Fruit("Golden apple", LocalDateTime.of(2023,11,20,10,00,00), LocalDateTime.of(2023,7,19,10,00,00),100.00f, 20.00f);
+        Food apple = new Fruit("Golden apple", LocalDateTime.of(2023,11,20,10,0,0), LocalDateTime.of(2023,7,19,10,0,0),100.00f, 20.00f);
 
         Warehous warehous = new Warehous();
         Shop shop = new Shop();
@@ -31,7 +31,7 @@ public class StoreTest {
 
     @Test
     public void shopTest() {
-        Food apple = new Fruit("Golden apple", LocalDateTime.of(2023,7,20,10,00,00), LocalDateTime.of(2023,6,18,10,00,00),100.00f, 20.00f);
+        Food apple = new Fruit("Golden apple", LocalDateTime.of(2023,7,20,10,0,0), LocalDateTime.of(2023,6,18,10,0,0),100.00f, 20.00f);
 
         Warehous warehous = new Warehous();
         Shop shop = new Shop();
@@ -54,7 +54,7 @@ public class StoreTest {
 
     @Test
     public void trashTest() {
-        Food apple = new Fruit("Golden apple", LocalDateTime.of(2023,7,18,10,00,00), LocalDateTime.of(2023,5,19,10,00,00),100.00f, 20.00f);
+        Food apple = new Fruit("Golden apple", LocalDateTime.of(2023,7,18,10,0,0), LocalDateTime.of(2023,5,19,10,0,0),100.00f, 20.00f);
 
         Warehous warehous = new Warehous();
         Shop shop = new Shop();
