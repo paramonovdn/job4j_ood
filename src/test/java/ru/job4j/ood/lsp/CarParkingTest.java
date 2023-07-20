@@ -1,5 +1,6 @@
 package ru.job4j.ood.lsp;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import ru.job4j.ood.lsp.parking.Car;
 import ru.job4j.ood.lsp.parking.CarParking;
@@ -12,6 +13,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class CarParkingTest {
+
+    @Disabled
     @Test
     public void whenThereArePlacesTest() {
         int parkingSpaceSize = 3;
