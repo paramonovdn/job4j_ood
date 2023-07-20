@@ -25,7 +25,6 @@ public class CarParkingTest {
         carList.add(cargoCar);
         ControlParking controlParking = new ControlParking(carParking);
         controlParking.control(carList);
-
         String result = carParking.howMuchCarPlacesBusy().toString();
         String expected = "[Car{name='Opel Astra', size=1}, Car{name='Kamaz', size=2}, Car{name='Kamaz', size=2}]";
         assertThat(result).isEqualTo(expected);
@@ -42,7 +41,6 @@ public class CarParkingTest {
         carList.add(cargoCar);
         carList.add(cargoCar);
         ControlParking controlParking = new ControlParking(carParking);
-
         assertThatThrownBy(() -> controlParking.control(carList)).isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("Парковочных мест для данного типа автомобиля нет!");
     }
