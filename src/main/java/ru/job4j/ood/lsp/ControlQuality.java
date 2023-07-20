@@ -13,15 +13,16 @@ public class ControlQuality {
         this.stores = stores;
     }
 
-    public void control(Food food) {
-        LocalDateTime createTime = food.getCreateDate();
-        LocalDateTime exTime = food.getExpiryDate();
-        LocalDateTime now = LocalDateTime.now();
-        float fullTime = MINUTES.between(createTime, exTime);
-        float tailTime = MINUTES.between(now, exTime);
-        percent = 100 - tailTime * 100 / fullTime;
-        for (Store store: stores) {
-            store.put(food);
+    public void control(List<Food> foodList, LocalDateTime distributionDate) {
+        for (Food food: foodList) {
+            LocalDateTime createTime = food.getCreateDate();
+            LocalDateTime exTime = food.getExpiryDate();
+            float fullTime = MINUTES.between(createTime, exTime);
+            float tailTime = MINUTES.between(distributionDate, exTime);
+            percent = 100 - tailTime * 100 / fullTime;
+            for (Store store: stores) {
+                store.put(food);
+            }
         }
     }
 

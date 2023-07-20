@@ -5,8 +5,8 @@ import java.util.List;
 
 public abstract class AbstractStore implements Store {
 
-    ControlQuality controlQuality;
-    List<Food> foodList = new ArrayList<>();
+    protected ControlQuality controlQuality;
+    private List<Food> foodList = new ArrayList<>();
 
     public AbstractStore(ControlQuality controlQuality) {
         this.controlQuality = controlQuality;
