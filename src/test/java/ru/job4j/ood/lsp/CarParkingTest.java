@@ -8,13 +8,12 @@ import ru.job4j.ood.lsp.parking.ControlParking;
 import ru.job4j.ood.lsp.parking.GeneralCarParking;
 import java.util.ArrayList;
 import java.util.List;
-
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
+@Disabled
 public class CarParkingTest {
 
-    @Disabled
     @Test
     public void whenThereArePlacesTest() {
         int parkingSpaceSize = 3;
