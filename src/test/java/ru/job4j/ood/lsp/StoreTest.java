@@ -54,4 +54,26 @@ public class StoreTest {
         assertThat(shopResult).isEqualTo(shopExpected);
         assertThat(trashResult).isEqualTo(trashExpected);
     }
+
+    @Test
+    public void resortTest() {
+        init();
+        LocalDateTime distributionDate = LocalDateTime.of(2023, 7, 20, 10, 0, 0);
+        LocalDateTime resortDate = LocalDateTime.of(2023, 11, 22, 10, 0, 0);
+
+        controlQuality.control(foodList, distributionDate);
+        controlQuality.resort(resortDate);
+
+        String resortWarehousResult = warehous.findAll().toString();
+        String resortShopResult = shop.findAll().toString();
+        String resortTrashResult = trash.findAll().toString();
+
+        String resortWarehousExpected = "[]";
+        String resortShopExpected = "[]";
+        String resortTrashExpected = "[Food{name='apple', expiryDate=2023-11-20T10:00, createDate=2023-07-19T10:00, price=100.0, discount=20.0}, Food{name='lemon', expiryDate=2023-07-21T10:00, createDate=2023-06-18T10:00, price=80.0, discount=20.0}]";
+
+        assertThat(resortWarehousResult).isEqualTo(resortWarehousExpected);
+        assertThat(resortShopResult).isEqualTo(resortShopExpected);
+        assertThat(resortTrashResult).isEqualTo(resortTrashExpected);
+    }
 }

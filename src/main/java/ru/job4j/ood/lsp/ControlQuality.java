@@ -1,6 +1,7 @@
 package ru.job4j.ood.lsp;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import static java.time.temporal.ChronoUnit.MINUTES;
@@ -22,8 +23,20 @@ public class ControlQuality {
             percent = 100 - tailTime * 100 / fullTime;
             for (Store store: stores) {
                 store.put(food);
+                Shop shop = new Shop(new ControlQuality(stores));
             }
         }
+    }
+
+    public void resort(LocalDateTime resortDate) {
+        List<Food> resortFoodList = new ArrayList<>();
+        for (Store store: stores) {
+            if (!(store instanceof Trash)) {
+                resortFoodList.addAll(store.findAll());
+            }
+            store.removeAll();
+        }
+        control(resortFoodList, resortDate);
     }
 
     public float getPercent() {

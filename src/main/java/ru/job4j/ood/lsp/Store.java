@@ -7,4 +7,6 @@ public interface Store {
     public void put(Food food);
 
     public List<Food> findAll();
+
+    public void removeAll();
 }
